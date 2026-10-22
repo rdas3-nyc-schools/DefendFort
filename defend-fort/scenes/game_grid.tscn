@@ -1,0 +1,16 @@
+[gd_scene format=4 uid="uid://dw0jasxkyeifn"]
+
+[ext_resource type="Texture2D" uid="uid://vsx34frhe4c5" path="res://assets/board_tile.png" id="1_7e7bg"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tqoos"]
+texture = ExtResource("1_7e7bg")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_tqoos"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_tqoos")
+
+[node name="GameGrid" type="TileMapLayer" unique_id=447186589]
+tile_map_data = PackedByteArray("AAAGAAQAAAAAAAAAAAAGAAUAAAAAAAAAAAAGAAYAAAAAAAAAAAAHAAQAAAAAAAAAAAAHAAUAAAAAAAAAAAAHAAYAAAAAAAAAAAAIAAQAAAAAAAAAAAAIAAUAAAAAAAAAAAAIAAYAAAAAAAAAAAAJAAQAAAAAAAAAAAAJAAUAAAAAAAAAAAAJAAYAAAAAAAAAAAAKAAQAAAAAAAAAAAAKAAUAAAAAAAAAAAAKAAYAAAAAAAAAAAALAAQAAAAAAAAAAAALAAUAAAAAAAAAAAALAAYAAAAAAAAAAAAGAAMAAAAAAAAAAAAHAAMAAAAAAAAAAAAIAAMAAAAAAAAAAAAJAAMAAAAAAAAAAAAKAAMAAAAAAAAAAAALAAMAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_tqoos")

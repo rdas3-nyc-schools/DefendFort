@@ -1,16 +1,24 @@
-[gd_scene format=4 uid="uid://b7d4hw6s1vuu"]
+[gd_scene format=3 uid="uid://b7d4hw6s1vuu"]
 
 [ext_resource type="Script" uid="uid://dtsbopdn887ur" path="res://scenes/game_board.gd" id="1_3wu0g"]
-[ext_resource type="Texture2D" uid="uid://vsx34frhe4c5" path="res://assets/board_tile.png" id="1_tqoos"]
+[ext_resource type="PackedScene" uid="uid://dw0jasxkyeifn" path="res://scenes/game_grid.tscn" id="2_3wu0g"]
+[ext_resource type="Texture2D" uid="uid://cdj5ekmrhbfot" path="res://assets/fort.png" id="3_0jtfi"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tqoos"]
-texture = ExtResource("1_tqoos")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_103ke"]
+bg_color = Color(0.003921569, 1, 0.015686275, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
 
-[sub_resource type="TileSet" id="TileSet_tqoos"]
-tile_size = Vector2i(64, 64)
-sources/0 = SubResource("TileSetAtlasSource_tqoos")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0jtfi"]
+bg_color = Color(0, 1, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
 
 [node name="GameBoard" type="Node2D" unique_id=754879310]
 script = ExtResource("1_3wu0g")
@@ -19,6 +27,35 @@ script = ExtResource("1_3wu0g")
 offset_right = 1163.0
 offset_bottom = 659.0
 
-[node name="GameGrid" type="TileMapLayer" parent="." unique_id=1261639470]
-tile_map_data = PackedByteArray("AAAGAAQAAAAAAAAAAAAGAAUAAAAAAAAAAAAGAAYAAAAAAAAAAAAHAAQAAAAAAAAAAAAHAAUAAAAAAAAAAAAHAAYAAAAAAAAAAAAIAAQAAAAAAAAAAAAIAAUAAAAAAAAAAAAIAAYAAAAAAAAAAAAJAAQAAAAAAAAAAAAJAAUAAAAAAAAAAAAJAAYAAAAAAAAAAAAKAAQAAAAAAAAAAAAKAAUAAAAAAAAAAAAKAAYAAAAAAAAAAAALAAQAAAAAAAAAAAALAAUAAAAAAAAAAAALAAYAAAAAAAAAAAAGAAMAAAAAAAAAAAAHAAMAAAAAAAAAAAAIAAMAAAAAAAAAAAAJAAMAAAAAAAAAAAAKAAMAAAAAAAAAAAALAAMAAAAAAAAAAAA=")
-tile_set = SubResource("TileSet_tqoos")
+[node name="GameGrid" parent="." unique_id=447186589 instance=ExtResource("2_3wu0g")]
+
+[node name="Player1Fort" type="Sprite2D" parent="." unique_id=1929539811]
+position = Vector2(575.00006, 473.99997)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("3_0jtfi")
+
+[node name="Player2Fort" type="Sprite2D" parent="." unique_id=1749390108]
+position = Vector2(575, 163)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("3_0jtfi")
+
+[node name="Player2HealthBar" type="ProgressBar" parent="." unique_id=1617147508]
+offset_left = 606.0
+offset_top = 157.0
+offset_right = 766.0
+offset_bottom = 184.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/fill = SubResource("StyleBoxFlat_103ke")
+max_value = 25.0
+value = 25.0
+rounded = true
+
+[node name="Player1HealthBar" type="ProgressBar" parent="." unique_id=1015175356]
+offset_left = 606.0
+offset_top = 457.0
+offset_right = 767.0
+offset_bottom = 484.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/fill = SubResource("StyleBoxFlat_0jtfi")
+max_value = 25.0
+value = 25.0
