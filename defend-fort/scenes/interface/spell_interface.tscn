@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c33qjvb3jx6m4"]
+
+[node name="SpellInterface" type="CanvasLayer" unique_id=1653410682]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1359049750]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -260.0
+offset_right = 260.0
+offset_bottom = 323.0
+grow_horizontal = 2
+mouse_filter = 2
+color = Color(0.5019608, 0.5019608, 0.5019608, 0.6156863)
+
+[node name="TextContainer" type="MarginContainer" parent="." unique_id=1903942290]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -77.5
+offset_right = 77.5
+offset_bottom = 33.0
+grow_horizontal = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextContainer" unique_id=1005188568]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Choose Your Spell!"

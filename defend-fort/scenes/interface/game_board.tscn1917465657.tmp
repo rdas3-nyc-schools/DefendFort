@@ -1,0 +1,328 @@
+[gd_scene format=3 uid="uid://b7d4hw6s1vuu"]
+
+[ext_resource type="Script" uid="uid://dtsbopdn887ur" path="res://scripts/game_board.gd" id="1_3wu0g"]
+[ext_resource type="PackedScene" uid="uid://dw0jasxkyeifn" path="res://scenes/interface/game_grid.tscn" id="2_3wu0g"]
+[ext_resource type="Texture2D" uid="uid://cdj5ekmrhbfot" path="res://assets/board_images/fort.png" id="3_0jtfi"]
+[ext_resource type="Texture2D" uid="uid://clns388kow745" path="res://assets/unit_images/melee_unit.png" id="3_mmjnl"]
+[ext_resource type="Script" uid="uid://dbkptywc17keq" path="res://scripts/game_grid.gd" id="3_w5uqb"]
+[ext_resource type="Texture2D" uid="uid://bak5c4giin51j" path="res://assets/hero_images/ice_mage_hero.jpg" id="4_8nsfp"]
+[ext_resource type="Texture2D" uid="uid://bp7avipqocs4f" path="res://assets/unit_images/ranged_unit.png" id="4_cwqdw"]
+[ext_resource type="Texture2D" uid="uid://bjyqbyji84gmm" path="res://assets/hero_images/wolf_hero.jpg" id="5_mmjnl"]
+[ext_resource type="Texture2D" uid="uid://d0rdxiva5j5er" path="res://assets/hero_images/ogre_hero.jpg" id="6_cwqdw"]
+[ext_resource type="Texture2D" uid="uid://bv5tfw48aq6g6" path="res://assets/hero_images/knight_hero.jpg" id="7_04ve2"]
+[ext_resource type="Texture2D" uid="uid://dyfvysj1tmkqf" path="res://assets/board_images/tower_tile.png" id="8_c1to4"]
+[ext_resource type="PackedScene" uid="uid://c33qjvb3jx6m4" path="res://scenes/interface/spell_interface.tscn" id="10_04ve2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_04ve2"]
+radius = 33.83785
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ofxi3"]
+radius = 35.468296
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oe1v1"]
+radius = 118.36849
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p11lv"]
+radius = 117.236626
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0jtfi"]
+bg_color = Color(0, 1, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c1to4"]
+bg_color = Color(0, 1, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ei1t6"]
+radius = 35.846897
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d2c4c"]
+radius = 34.785053
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7kray"]
+radius = 34.4093
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c1to4"]
+radius = 33.61547
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_103ke"]
+bg_color = Color(0.003921569, 1, 0.015686275, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w5uqb"]
+bg_color = Color(0, 1, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[node name="GameBoard" type="Node2D" unique_id=754879310]
+script = ExtResource("1_3wu0g")
+
+[node name="Background" type="ColorRect" parent="." unique_id=164703514]
+offset_left = -5.0
+offset_top = 1.0
+offset_right = 1158.0
+offset_bottom = 660.0
+mouse_filter = 1
+
+[node name="GameGrid" parent="." unique_id=447186589 instance=ExtResource("2_3wu0g")]
+script = ExtResource("3_w5uqb")
+
+[node name="Player1" type="Node" parent="." unique_id=252705919]
+
+[node name="UnitButtons" type="Node" parent="Player1" unique_id=829940942]
+
+[node name="MeleeUnit1" type="Area2D" parent="Player1/UnitButtons" unique_id=1151171846]
+position = Vector2(155, 519)
+
+[node name="MeleeUnitImage" type="Sprite2D" parent="Player1/UnitButtons/MeleeUnit1" unique_id=529105588]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_mmjnl")
+
+[node name="MeleeUnit1Shape" type="CollisionShape2D" parent="Player1/UnitButtons/MeleeUnit1" unique_id=914593436]
+shape = SubResource("CircleShape2D_04ve2")
+
+[node name="RangedUnit1" type="Area2D" parent="Player1/UnitButtons" unique_id=584479756]
+position = Vector2(155, 597)
+
+[node name="RangedUnitImage" type="Sprite2D" parent="Player1/UnitButtons/RangedUnit1" unique_id=758546340]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_cwqdw")
+
+[node name="RangedUnitShape" type="CollisionShape2D" parent="Player1/UnitButtons/RangedUnit1" unique_id=156533021]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_ofxi3")
+
+[node name="MeleeUnit2" type="Area2D" parent="Player1/UnitButtons" unique_id=120258742]
+position = Vector2(994, 519)
+scale = Vector2(0.3, 0.3)
+
+[node name="MeleeUnit2Image" type="Sprite2D" parent="Player1/UnitButtons/MeleeUnit2" unique_id=844116930]
+texture = ExtResource("3_mmjnl")
+
+[node name="MeleeUnit2Shape" type="CollisionShape2D" parent="Player1/UnitButtons/MeleeUnit2" unique_id=786375359]
+shape = SubResource("CircleShape2D_oe1v1")
+
+[node name="RangedUnit2" type="Area2D" parent="Player1/UnitButtons" unique_id=1137097843]
+position = Vector2(994, 597)
+scale = Vector2(0.3, 0.3)
+
+[node name="RangedUnit2Image" type="Sprite2D" parent="Player1/UnitButtons/RangedUnit2" unique_id=1361160118]
+texture = ExtResource("4_cwqdw")
+
+[node name="RangedUnit2Shape" type="CollisionShape2D" parent="Player1/UnitButtons/RangedUnit2" unique_id=496139128]
+shape = SubResource("CircleShape2D_p11lv")
+
+[node name="Sprites" type="Node" parent="Player1" unique_id=1529910651]
+
+[node name="Player1Hero1" type="Sprite2D" parent="Player1/Sprites" unique_id=915185503]
+position = Vector2(518, 77)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_8nsfp")
+
+[node name="Player1Hero2" type="Sprite2D" parent="Player1/Sprites" unique_id=1679188210]
+position = Vector2(634, 76)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_mmjnl")
+
+[node name="Player1Fort" type="Sprite2D" parent="Player1/Sprites" unique_id=1929539811]
+position = Vector2(575.00006, 473.99997)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("3_0jtfi")
+
+[node name="Spells" type="Node" parent="Player1" unique_id=1445814780]
+
+[node name="Player1Hero1SpellButton" type="Button" parent="Player1/Spells" unique_id=1851877189]
+offset_left = 7.0
+offset_top = 507.0
+offset_right = 96.0
+offset_bottom = 639.0
+text = "View
+Spells"
+
+[node name="Player1Hero2SpellButton" type="Button" parent="Player1/Spells" unique_id=1580038081]
+offset_left = 1055.0
+offset_top = 511.0
+offset_right = 1144.0
+offset_bottom = 643.0
+text = "View
+Spells"
+
+[node name="Player1HealthBar" type="ProgressBar" parent="Player1" unique_id=1015175356]
+offset_left = 606.0
+offset_top = 457.0
+offset_right = 767.0
+offset_bottom = 484.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/fill = SubResource("StyleBoxFlat_0jtfi")
+max_value = 25.0
+value = 25.0
+
+[node name="Tower" type="Node" parent="Player1" unique_id=1495843854]
+
+[node name="TowerImage" type="Sprite2D" parent="Player1/Tower" unique_id=906833765]
+position = Vector2(481, 416)
+texture = ExtResource("8_c1to4")
+
+[node name="TowerHealthBar" type="ProgressBar" parent="Player1/Tower" unique_id=1005317877]
+offset_left = 288.0
+offset_top = 405.0
+offset_right = 374.0
+offset_bottom = 432.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/fill = SubResource("StyleBoxFlat_c1to4")
+max_value = 10.0
+value = 10.0
+
+[node name="Units" type="Node" parent="Player1" unique_id=97524352]
+
+[node name="Player2" type="Node" parent="." unique_id=366759684]
+
+[node name="UnitButtons" type="Node" parent="Player2" unique_id=2030513466]
+
+[node name="MeleeUnit1" type="Area2D" parent="Player2/UnitButtons" unique_id=1199965676]
+position = Vector2(155, 44)
+
+[node name="MeleeUnitImage" type="Sprite2D" parent="Player2/UnitButtons/MeleeUnit1" unique_id=283474377]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_mmjnl")
+
+[node name="MeleeUnit1Shape" type="CollisionShape2D" parent="Player2/UnitButtons/MeleeUnit1" unique_id=193465593]
+shape = SubResource("CircleShape2D_ei1t6")
+
+[node name="RangedUnit1" type="Area2D" parent="Player2/UnitButtons" unique_id=623398171]
+position = Vector2(155, 127)
+
+[node name="RangedUnitImage" type="Sprite2D" parent="Player2/UnitButtons/RangedUnit1" unique_id=1003153960]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_cwqdw")
+
+[node name="RangedUnit1Shape" type="CollisionShape2D" parent="Player2/UnitButtons/RangedUnit1" unique_id=1184114409]
+shape = SubResource("CircleShape2D_d2c4c")
+
+[node name="MeleeUnit2" type="Area2D" parent="Player2/UnitButtons" unique_id=2123745239]
+position = Vector2(994, 45)
+
+[node name="MeleeUnitImage" type="Sprite2D" parent="Player2/UnitButtons/MeleeUnit2" unique_id=65218580]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_mmjnl")
+
+[node name="MeleeUnit2Shape" type="CollisionShape2D" parent="Player2/UnitButtons/MeleeUnit2" unique_id=605601997]
+shape = SubResource("CircleShape2D_7kray")
+
+[node name="RangedUnit2" type="Area2D" parent="Player2/UnitButtons" unique_id=1715641662]
+position = Vector2(994, 127)
+
+[node name="RangedUnitImage" type="Sprite2D" parent="Player2/UnitButtons/RangedUnit2" unique_id=187407960]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_cwqdw")
+
+[node name="RangedUnit2Shape" type="CollisionShape2D" parent="Player2/UnitButtons/RangedUnit2" unique_id=1652491855]
+shape = SubResource("CircleShape2D_c1to4")
+
+[node name="Sprites" type="Node" parent="Player2" unique_id=567850565]
+
+[node name="Player2Fort" type="Sprite2D" parent="Player2/Sprites" unique_id=1749390108]
+position = Vector2(575, 163)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("3_0jtfi")
+
+[node name="Player2Hero1" type="Sprite2D" parent="Player2/Sprites" unique_id=1105905634]
+position = Vector2(518, 566)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_cwqdw")
+
+[node name="Player2Hero2" type="Sprite2D" parent="Player2/Sprites" unique_id=1020719590]
+position = Vector2(625, 566)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_04ve2")
+
+[node name="Spells" type="Node" parent="Player2" unique_id=8308816]
+
+[node name="Player2Hero1SpellButton" type="Button" parent="Player2/Spells" unique_id=1850547146]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 97.0
+offset_bottom = 140.0
+text = "View
+Spells"
+
+[node name="Player2Hero2SpellButton" type="Button" parent="Player2/Spells" unique_id=32257237]
+offset_left = 1056.0
+offset_top = 9.0
+offset_right = 1145.0
+offset_bottom = 141.0
+text = "View
+Spells"
+
+[node name="Player2HealthBar" type="ProgressBar" parent="Player2" unique_id=1617147508]
+offset_left = 606.0
+offset_top = 157.0
+offset_right = 766.0
+offset_bottom = 184.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/fill = SubResource("StyleBoxFlat_103ke")
+max_value = 25.0
+value = 25.0
+rounded = true
+
+[node name="Tower" type="Node" parent="Player2" unique_id=277736221]
+
+[node name="TowerImage" type="Sprite2D" parent="Player2/Tower" unique_id=603038189]
+position = Vector2(672, 224)
+texture = ExtResource("8_c1to4")
+
+[node name="TowerHealthBar" type="ProgressBar" parent="Player2/Tower" unique_id=882715194]
+custom_minimum_size = Vector2(86, 27)
+offset_left = 780.0
+offset_top = 209.0
+offset_right = 784.0
+offset_bottom = 236.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/fill = SubResource("StyleBoxFlat_w5uqb")
+max_value = 10.0
+value = 10.0
+
+[node name="Units" type="Node" parent="Player2" unique_id=991314442]
+
+[node name="SpellInterface" parent="." unique_id=1302427348 instance=ExtResource("10_04ve2")]
+visible = false
+
+[node name="PlayerTurnLabel" type="RichTextLabel" parent="." unique_id=1469172814]
+offset_left = 6.0
+offset_top = 318.0
+offset_right = 242.0
+offset_bottom = 358.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Player 1 Turn!"
+
+[connection signal="mouse_entered" from="Player1/UnitButtons/MeleeUnit1" to="." method="_on_melee_unit_1_mouse_entered"]
+[connection signal="mouse_exited" from="Player1/UnitButtons/MeleeUnit1" to="." method="_on_melee_unit_1_mouse_exited"]
+[connection signal="mouse_entered" from="Player1/UnitButtons/RangedUnit1" to="." method="_on_ranged_unit_1_mouse_entered"]
+[connection signal="mouse_exited" from="Player1/UnitButtons/RangedUnit1" to="." method="_on_ranged_unit_1_mouse_exited"]
+[connection signal="mouse_entered" from="Player1/UnitButtons/MeleeUnit2" to="." method="_on_melee_unit_2_mouse_entered"]
+[connection signal="mouse_exited" from="Player1/UnitButtons/MeleeUnit2" to="." method="_on_melee_unit_2_mouse_exited"]
+[connection signal="mouse_entered" from="Player1/UnitButtons/RangedUnit2" to="." method="_on_ranged_unit_2_mouse_entered"]
+[connection signal="mouse_exited" from="Player1/UnitButtons/RangedUnit2" to="." method="_on_ranged_unit_2_mouse_exited"]
+[connection signal="mouse_entered" from="Player2/UnitButtons/MeleeUnit1" to="." method="_on_player2_melee_unit_1_mouse_entered"]
+[connection signal="mouse_exited" from="Player2/UnitButtons/MeleeUnit1" to="." method="_on_player2_melee_unit_1_mouse_exited"]
+[connection signal="mouse_entered" from="Player2/UnitButtons/RangedUnit1" to="." method="_on_player2_ranged_unit_1_mouse_entered"]
+[connection signal="mouse_exited" from="Player2/UnitButtons/RangedUnit1" to="." method="_on_player2_ranged_unit_1_mouse_exited"]
+[connection signal="mouse_entered" from="Player2/UnitButtons/MeleeUnit2" to="." method="_on_player2_melee_unit_2_mouse_entered"]
+[connection signal="mouse_exited" from="Player2/UnitButtons/MeleeUnit2" to="." method="_on_player2_melee_unit_2_mouse_exited"]
+[connection signal="mouse_entered" from="Player2/UnitButtons/RangedUnit2" to="." method="_on_player2_ranged_unit_2_mouse_entered"]
+[connection signal="mouse_exited" from="Player2/UnitButtons/RangedUnit2" to="." method="_on_player2_ranged_unit_2_mouse_exited"]

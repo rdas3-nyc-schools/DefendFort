@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bmywdxmsvl4sn"]
+
+[ext_resource type="Texture2D" uid="uid://bb3d58yv3eqo8" path="res://assets/unit_images/ranged_unit_single.png" id="1_4jva5"]
+
+[node name="SingleUnit" type="Node2D" unique_id=2050491457]
+
+[node name="SingleUnitImage" type="Sprite2D" parent="." unique_id=210804933]
+texture = ExtResource("1_4jva5")
